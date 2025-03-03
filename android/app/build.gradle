@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android' // Ensure Kotlin plugin is applied here
+}
+
+android {
+    namespace = "com.example.dairy"
+    compileSdk = 34 // Set a fixed SDK version (Flutter doesn't provide this)
+
+    ndkVersion = "25.1.8937393" // Set an explicit NDK version if needed
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8" // Correct syntax
+    }
+
+    defaultConfig {
+        applicationId = "com.example.dairy"
+        minSdk = 21 // Set a minimum SDK manually if Flutter doesn't provide it
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
