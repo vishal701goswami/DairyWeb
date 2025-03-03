@@ -5,6 +5,7 @@ import 'package:dairy/Homepage/View/moving.item.dart';
 import 'package:dairy/dropdownSales.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -26,8 +27,11 @@ class SalesDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Logo", style: GoogleFonts.montserrat(color: Colors.black, fontWeight: FontWeight.bold
-        ),),
+        title: Text(
+          "Logo",
+          style: GoogleFonts.montserrat(
+              color: Colors.black, fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.white,
         elevation: 0,
         actions: [
@@ -47,12 +51,14 @@ class SalesDashboard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 "Sales Summary",
-                style: GoogleFonts.montserrat(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(
@@ -324,73 +330,69 @@ class SalesDashboard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(
-                          width: 20,
-                        ),
                         Expanded(
                             child: Text(
                           "Stock Report",
                           style: TextStyle(color: Colors.black, fontSize: 16),
                         )),
-                        Expanded(
-                          child: Container(
-                            height: 45,
-                            color: Colors.transparent,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                    child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      height: 15,
-                                      width: 15,
-                                      decoration: BoxDecoration(
-                                        color: Colors.blue,
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
+                        Container(
+                          height: 45,
+                          color: Colors.transparent,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue,
+                                      borderRadius: BorderRadius.circular(50),
                                     ),
-                                    SizedBox(
-                                      width: 10,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    "Stock In",
+                                    style: TextStyle(
+                                        color: Colors.blue, fontSize: 16),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                          255, 108, 17, 217),
+                                      borderRadius: BorderRadius.circular(50),
                                     ),
-                                    Text(
-                                      "Stock In",
-                                      style: TextStyle(
-                                          color: Colors.blue, fontSize: 16),
-                                    )
-                                  ],
-                                )),
-                                Expanded(
-                                    child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      height: 15,
-                                      width: 15,
-                                      decoration: BoxDecoration(
-                                        color: const Color.fromARGB(
-                                            255, 108, 17, 217),
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    "Stock Out",
+                                    style: TextStyle(
+                                      color: const Color.fromARGB(
+                                          255, 108, 17, 217),
                                     ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Text(
-                                      "Stock Out",
-                                      style: TextStyle(
-                                        color: const Color.fromARGB(
-                                            255, 108, 17, 217),
-                                      ),
-                                    )
-                                  ],
-                                ))
-                              ],
-                            ),
+                                  )
+                                ],
+                              )
+                            ],
                           ),
                         )
                       ],
@@ -450,9 +452,9 @@ class SalesDashboard extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(color: Colors.white),
                 child: FastMovingItemsSection()),
-                SizedBox(
-                  height: 20,
-                )
+            SizedBox(
+              height: 20,
+            )
           ],
         ),
       ),
