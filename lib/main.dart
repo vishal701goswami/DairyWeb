@@ -1,5 +1,6 @@
 
 import 'package:dairy/Homepage/View/Homepage.dart';
+import 'package:dairy/inventory/view/inventory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
           designSize: const Size(360, 800), // Set your design dimensions
           minTextAdapt: true,
           
-          child: SalesDashboardApp(),
+          child: 
+          // SalesDashboardApp(),
+Inventory()
 
           ),
 
